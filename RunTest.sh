@@ -39,3 +39,22 @@ cd test/HarmonicFieldTest
 root -l -q -c '../../out/TREEendlog.c("BFCut.out")'
 rm BFCut.out
 mv BFCut.out.root B0z_G10_rot.out.root
+
+# a simple B0z, with a non-zero graident in the z-diretcion, rotated by a polar angle
+# of pi/2. This uses the edmfields class, for comparison with harmonicfields
+cd ../..
+./PENTrack 0 test/HarmonicFieldTest/config_edm_comp.in test/HarmonicFieldTest/
+cd test/HarmonicFieldTest
+root -l -q -c '../../out/TREEendlog.c("BFCut.out")'
+rm BFCut.out
+mv BFCut.out.root edm_comp.out.root
+
+# a simple B0z, with a non-zero graident in the z-diretcion, rotated by a polar angle
+# of pi/2. This uses the harmonicfields class, for comparison with edmfields
+cd ../..
+./PENTrack 0 test/HarmonicFieldTest/config_harm_comp.in test/HarmonicFieldTest/
+cd test/HarmonicFieldTest
+root -l -q -c '../../out/TREEendlog.c("BFCut.out")'
+rm BFCut.out
+mv BFCut.out.root harm_comp.out.root
+
